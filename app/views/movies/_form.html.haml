@@ -10,7 +10,7 @@
     = f.label :name
     = f.text_field :name
   .field
-    = f.label :content
-    = f.text_area :content
+    = f.label :content, 'Script content'
+    = f.text_area :content, rows: '20', cols: '120'
   .actions
     = f.submit 'Save'

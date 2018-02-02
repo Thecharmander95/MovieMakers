@@ -4,7 +4,7 @@
   %thead
     %tr
       %th Name
-      %th Content
+      %th Script content
       %th
       %th
       %th
@@ -16,7 +16,7 @@
         %td= movie.content
         %td= link_to 'Show', movie
         %td= link_to 'Edit', edit_movie_path(movie)
-        %td= link_to 'Destroy', movie, method: :delete, data: { confirm: 'Are you sure?' }
+        %td= link_to 'Destroy', movie, method: :delete, data: { confirm: 'Are you sure? You did good!' }
 
 %br
 
