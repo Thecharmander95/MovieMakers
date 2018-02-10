@@ -1,7 +1,19 @@
 body{
-  background-image: url("film.jpg");
+  background-color: gray;
 }
 
 h1,h2,h3,h4,h5,h6{
   color: red;
+}
+
+.box {
+  background-color: white;
+  color: #fff;
+  border-radius: 3px;
+  padding: 15px;
+}
+
+.big{
+  color: red;
+  size: 10px;
 }
