@@ -1,0 +1,9 @@
+.row
+  .small-12.columns
+    - if flash[:notice]
+      .primary.callout
+        = flash[:notice]
+
+    - if flash[:alert]
+      .alert.callout
+        = flash[:alert]
