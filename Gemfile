@@ -34,8 +34,11 @@ gem 'jbuilder', '~> 2.5'
 # gem 'capistrano-rails', group: :development
 
 gem 'haml-rails', '~> 1.0.0'
+gem 'html2haml', '~> 2.2.0'
 gem 'jquery-rails','~> 4.3.1'
-gem 'foundation-rails'
+gem 'foundation-rails', '~> 6.4.1'
+
+gem 'devise', '~> 4.4.1'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
