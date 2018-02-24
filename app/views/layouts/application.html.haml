@@ -8,6 +8,9 @@
     = javascript_include_tag "application", 'data-turbolinks-track' => true
     = csrf_meta_tags
   %body
-    = render 'layouts/top_bar'
-    = render 'notifications/flash_messages'
-    = yield
+    #wrap
+      = render 'layouts/topbar'
+      #main
+        = render 'notifications/flash_messages'
+        = yield
+    = render 'layouts/footer'
