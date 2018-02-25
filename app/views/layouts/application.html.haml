@@ -7,10 +7,12 @@
     = stylesheet_link_tag    "application"
     = javascript_include_tag "application", 'data-turbolinks-track' => true
     = csrf_meta_tags
+    = favicon_link_tag
   %body
     #wrap
-      = render 'layouts/topbar'
+      = render 'layouts/top_bar'
       #main
         = render 'notifications/flash_messages'
         = yield
-    = render 'layouts/footer'
+      = render 'layouts/footer'
+s
