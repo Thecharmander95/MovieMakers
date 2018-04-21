@@ -4,7 +4,7 @@
 %p
   %b Script content:
   = @movie.content
-
-= link_to 'Edit', edit_movie_path(@movie)
-\|
-= link_to 'Back', movies_path
+.hide_on_print
+  = link_to 'Edit', edit_movie_path(@movie)
+  \|
+  = link_to 'Back', movies_path

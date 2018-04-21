@@ -4,7 +4,7 @@
     %meta{:charset => "utf-8"}/
     %meta{:content => "width=device-width, initial-scale=1.0", :name => "viewport"}/
     %title= content_for?(:title) ? yield(:title) : "Movie Makers"
-    = stylesheet_link_tag    "application"
+    = stylesheet_link_tag 'application', media: :all
     = javascript_include_tag "application", 'data-turbolinks-track' => true
     = csrf_meta_tags
     = favicon_link_tag
@@ -14,5 +14,3 @@
       #main
         = render 'notifications/flash_messages'
         = yield
-      = render 'layouts/footer'
-s
