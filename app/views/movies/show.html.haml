@@ -3,7 +3,11 @@
   = @movie.name
 %p
   %b Script content:
-  = @movie.content
+  - @movie.scenes.each do |scene|
+    %p
+      = scene.name
+      %br/
+      = scene.content
 .hide_on_print
   = link_to 'Edit', edit_movie_path(@movie)
   \|
