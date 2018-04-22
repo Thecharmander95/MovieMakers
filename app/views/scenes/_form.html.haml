@@ -1,4 +1,4 @@
-= form_for @scene do |f|
+= form_for [@movie, @scene] do |f|
   - if @scene.errors.any?
     #error_explanation
       %h2= "#{pluralize(@scene.errors.count, "error")} prohibited this scene from being saved:"

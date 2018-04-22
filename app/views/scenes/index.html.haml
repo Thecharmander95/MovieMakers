@@ -14,10 +14,12 @@
       %tr
         %td= scene.name
         %td= scene.content
-        %td= link_to 'Show', scene
-        %td= link_to 'Edit', edit_scene_path(scene)
-        %td= link_to 'Destroy', scene, method: :delete, data: { confirm: 'Are you sure?' }
+        %td= link_to 'Show', [scene.movie, scene]
+        %td= link_to 'Edit', edit_movie_scene_path(scene.movie, scene)
+        %td= link_to 'Destroy', [scene.movie, scene], method: :delete, data: { confirm: 'Are you sure?' }
 
 %br
 
-= link_to 'New Scene', new_scene_path
+= link_to 'New Scene', new_movie_scene_path(@movie)
+\|
+= link_to 'Back to Movie', movie_path(@movie)

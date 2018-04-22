@@ -2,6 +2,6 @@
 
 = render 'form'
 
-= link_to 'Show', @scene
+= link_to 'Show', [@movie, @scene]
 \|
-= link_to 'Back', scenes_path
+= link_to 'Back', movie_scenes_path(@movie)

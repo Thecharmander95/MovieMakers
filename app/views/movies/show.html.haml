@@ -5,9 +5,11 @@
   %b Script content:
   - @movie.scenes.each do |scene|
     %p
-      = scene.name
+      %b= link_to scene.name, edit_movie_scene_path(@movie, scene)
       %br/
       = scene.content
+
+%p= link_to 'New scene', new_movie_scene_path(@movie), class: 'button'
 .hide_on_print
   = link_to 'Edit', edit_movie_path(@movie)
   \|

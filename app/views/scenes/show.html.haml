@@ -7,6 +7,6 @@
   %b Content:
   = @scene.content
 
-= link_to 'Edit', edit_scene_path(@scene)
+= link_to 'Edit', edit_movie_scene_path(@movie, @scene)
 \|
-= link_to 'Back', scenes_path
+= link_to 'Back', movie_scenes_path(@movie)
