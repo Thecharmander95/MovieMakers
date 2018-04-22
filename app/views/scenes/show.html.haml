@@ -1,0 +1,12 @@
+%p#notice= notice
+
+%p
+  %b Name:
+  = @scene.name
+%p
+  %b Content:
+  = @scene.content
+
+= link_to 'Edit', edit_scene_path(@scene)
+\|
+= link_to 'Back', scenes_path
