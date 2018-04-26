@@ -3,9 +3,17 @@
   = @movie.name
 %p
   %b Script content:
-  = @movie.content
+  - @movie.scenes.each do |scene|
+    %p
+      %b= scene.name
+      = link_to 'Edit scene', edit_movie_scene_path(@movie, scene),
+      class: 'button secondary small'
+      %br/
+      = scene.content
+
+%p= link_to 'New scene', new_movie_scene_path(@movie), class: 'button'
 .hide_on_print
   = link_to 'Edit', edit_movie_path(@movie)
   \|
   = link_to 'Back', movies_path
-  %p Hit ctrl P to pirint
+  %p Hit Ctrl+P to print
