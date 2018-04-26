@@ -5,3 +5,5 @@
 = link_to 'Show', [@movie, @scene]
 \|
 = link_to 'Back', movie_path(@movie)
+\|
+= link_to 'Destroy', [@movie, @scene], method: :delete, data: { confirm: 'Are you sure?' }

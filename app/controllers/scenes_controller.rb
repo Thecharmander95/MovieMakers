@@ -57,7 +57,7 @@ class ScenesController < ApplicationController
   def destroy
     @scene.destroy
     respond_to do |format|
-      format.html { redirect_to movie_scenes_url(@movie), notice: 'Scene was successfully destroyed.' }
+      format.html { redirect_to movie_url(@movie), notice: 'Scene was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
