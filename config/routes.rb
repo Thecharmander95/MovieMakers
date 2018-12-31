@@ -1,8 +1,10 @@
 Rails.application.routes.draw do
   root 'sites#home'
 
+  get :about, to: 'sites#about'
+
   devise_for :users
-  resources :movies do    
+  resources :movies do
     resources :scenes
   end
 
