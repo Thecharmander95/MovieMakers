@@ -34,6 +34,7 @@ gem 'bcrypt', git: 'https://github.com/codahale/bcrypt-ruby.git', :require => 'b
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
+gem 'bootsnap', require: false
 gem 'haml-rails', '~> 1.0.0'
 gem 'html2haml', '~> 2.2.0'
 gem 'jquery-rails','~> 4.3.1'
