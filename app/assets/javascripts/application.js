@@ -19,6 +19,7 @@
 $(document).on('turbolinks:load', function() {
   $(function(){ $(document).foundation(); });
 });
+
 :javascript
   (adsbygoogle = window.adsbygoogle || []).push({
        google_ad_client: "ca-pub-9165833991968939",
