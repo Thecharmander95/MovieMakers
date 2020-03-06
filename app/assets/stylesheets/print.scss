@@ -30,12 +30,6 @@
     font-size: 1.1rem;
   }
 
-  @for $n from 1 through $grid-column-count {
-    .large-#{$n} {
-      width: percentage($n / $grid-column-count);
-    }
-  }
-
   nav, .top-bar, .sub_top_bar, .button , footer, .hide_on_print {
     display: none;
   }
