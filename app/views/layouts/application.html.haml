@@ -9,8 +9,8 @@
     = javascript_pack_tag 'application', 'data-turbolinks-track': true
     = csrf_meta_tags
   %body
-    #wrap
-      = render 'layouts/top_bar'
-      #main
-        = render 'notifications/flash_messages'
-        = yield
+    = render 'layouts/topbar'
+    = render 'notifications/flash_messages'
+    .grid-container
+      = yield
+    = render 'layouts/footer'

@@ -1,19 +1,23 @@
-%p
+%h1
   %b Name:
   = @movie.name
-%p
+%h4
   %b Script content:
-  - @movie.scenes.each do |scene|
-    %p
-      %b= scene.name
-      = link_to 'Edit scene', edit_movie_scene_path(@movie, scene),
-      class: 'button secondary small'
+- @movie.scenes.each do |scene|
+  .callout
+    %h6
+      The scenes name:
+      = scene.name
       %br/
+      The scenes content:
       = scene.content
+      %br/
+      = link_to 'Edit scene', edit_movie_scene_path(@movie, scene), class: 'button secondary small'
 
 %p= link_to 'New scene', new_movie_scene_path(@movie), class: 'button'
 .hide_on_print
-  = link_to 'Edit', edit_movie_path(@movie)
+  = link_to 'Edit', edit_movie_path(@movie), class: "button"
   \|
-  = link_to 'Back', movies_path
-  %p Hit Ctrl+P or command+p to print
+  = link_to 'Back', movies_path, class: "button"
+  \|
+  = link_to "Print this Page", "javascript:print()", class: "button"

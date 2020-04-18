@@ -2,8 +2,8 @@
 
 = render 'form'
 
-= link_to 'Show', [@movie, @scene]
+= link_to 'Show', [@movie, @scene], class: "button"
 \|
-= link_to 'Back', movie_path(@movie)
+= link_to 'Back', movie_path(@movie), class: "button"
 \|
-= link_to 'Destroy', [@movie, @scene], method: :delete, data: { confirm: 'Are you sure?' }
+= link_to 'Destroy', [@movie, @scene], method: :delete, data: { confirm: 'Are you sure?' }, class: "button"

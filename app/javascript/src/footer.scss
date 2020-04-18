@@ -1,13 +1,28 @@
-$footer-size: 60px;
-
-html, body {height: 100%;}
-
-#wrap {min-height: 100%;}
-
-#main {padding-bottom: $footer-size;} /* must be same height as the footer */
-
 footer {
-  position: relative;
-  margin-top: -$footer-size; /* negative value of footer height */
-  min-height: $footer-size; /* footer size */
+ margin-top: 45px;
+ padding-top: 5px;
+ border-top: 1px solid #eaeaea;
+ color: #999;
+}
+
+footer a {
+ color: #555;
+}
+
+footer a:hover {
+ color: #222;
+}
+
+footer small {
+ float: left;
+}
+
+footer ul {
+ float: right;
+ list-style: none;
+}
+
+footer ul li {
+ float: left;
+ margin-left: 10px;
 }

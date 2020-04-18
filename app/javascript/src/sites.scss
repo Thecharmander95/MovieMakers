@@ -2,8 +2,8 @@ body{
   background-color: #c2c2c2;
 }
 
-h1,h2,h3,h4,h5,h6{
-  color: red;
+h1{
+  color: grey;
 }
 
 .box {
@@ -19,4 +19,18 @@ h1,h2,h3,h4,h5,h6{
 
 img.small {
   height: 100px
+}
+
+h4 {
+    color: ghostwhite;
+}
+
+a.button {
+    color: brown;
+    background-color: blanchedalmond;
+}
+
+a.button.hover {
+    background-color: coral;
+    color: red;
 }

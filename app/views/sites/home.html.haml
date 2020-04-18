@@ -1,10 +1,4 @@
-.grid-x
-  .medium-6.columns
-    %h1 Welcome Movie Makers
-.grid-x
-  .medium-7.columns
-    %p to get started click the button down below.
-    = image_pack_tag("flim.png", class: "small")
-.grid-x
-  .medium-6.columns.small-centered
-    = link_to 'Ready', movies_path, class: 'button alert expanded'
+%h1 Welcome Movie Makers
+%h4 If you whould like to make your own movie your in the right place click the button below.
+= image_pack_tag("flim.png", class: "small")
+= link_to 'Ready', movies_path, class: 'button alert expanded'
