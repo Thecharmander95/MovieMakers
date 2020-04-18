@@ -35,13 +35,13 @@ gem 'bcrypt', git: 'https://github.com/codahale/bcrypt-ruby.git', :require => 'b
 # gem 'capistrano-rails', group: :development
 
 gem 'bootsnap', require: false
-gem 'haml-rails', '~> 2.0.1'
-gem 'html2haml', '~> 2.2.0'
-gem 'jquery-rails','~> 4.3.1'
+gem 'haml-rails'
+gem 'html2haml'
+gem 'jquery-rails'
 gem 'foundation-rails', '~> 6.6.1'
 gem 'autoprefixer-rails'
 
-gem 'devise', '~> 4.7.1'
+gem 'devise'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
@@ -62,4 +62,4 @@ group :development do
   gem 'spring-watcher-listen', '~> 2.0.0'
 end
 
-ruby '2.7.0'
+ruby '2.7.1'
