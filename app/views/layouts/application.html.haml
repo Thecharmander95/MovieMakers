@@ -3,11 +3,11 @@
   %head
     %meta{:charset => "utf-8"}/
     %meta{:content => "width=device-width, initial-scale=1.0", :name => "viewport"}/
-    %title= content_for?(:title) ? yield(:title) : "Movie Makers"
-    = stylesheet_link_tag 'application', media: :all
-    = javascript_include_tag "application", 'data-turbolinks-track' => true
+    %title Movie Makers
+    = favicon_link_tag asset_pack_path('media/images/favicon.ico')
+    = stylesheet_pack_tag 'application', media: 'all', 'data-turbolinks-track': 'reload'
+    = javascript_pack_tag 'application', 'data-turbolinks-track': true
     = csrf_meta_tags
-    = favicon_link_tag
   %body
     #wrap
       = render 'layouts/top_bar'

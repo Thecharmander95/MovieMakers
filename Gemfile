@@ -40,7 +40,7 @@ gem 'html2haml'
 gem 'jquery-rails'
 gem 'foundation-rails', '~> 6.6.1'
 gem 'autoprefixer-rails'
-
+gem 'webpacker'
 gem 'devise'
 
 group :development, :test do

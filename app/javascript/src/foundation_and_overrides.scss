@@ -1,7 +1,7 @@
 @charset 'utf-8';
 
 @import 'settings';
-@import 'foundation';
+@import 'foundation-sites/scss/foundation';
 
 // If you'd like to include motion-ui the foundation-rails gem comes prepackaged with it, uncomment the 3 @imports, if you are not using the gem you need to install the motion-ui sass package.
 //
@@ -10,8 +10,8 @@
 // We include everything by default.  To slim your CSS, remove components you don't use.
 
 @include foundation-global-styles;
-//@include foundation-xy-grid-classes;
-@include foundation-grid;
+@include foundation-xy-grid-classes;
+//@include foundation-grid;
 //@include foundation-flex-grid;
 @include foundation-flex-classes;
 @include foundation-typography;
