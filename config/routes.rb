@@ -4,6 +4,7 @@ Rails.application.routes.draw do
 
   resources :movies do
     resources :scenes
+    resources :picturescenes
   end
 
   resources :abouts

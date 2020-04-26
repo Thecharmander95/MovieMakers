@@ -1,0 +1,25 @@
+= form_for [@movie, @picturescene] do |f|
+  - if @picturescene.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(@picturescene.errors.count, "error")} prohibited this scene from being saved:"
+      %ul
+        - @picturescene.errors.full_messages.each do |message|
+          %li= message
+
+  .field
+    = f.label :Give_the_picture_a_label
+    Like when the picture shows in the Movie.
+    = f.text_field :name
+  %span.picture
+    = f.file_field :picture, accept: 'image/jpeg,image/gif,image/png'
+  .actions
+    = f.submit class: 'button'
+  .actions
+    = f.submit 'Save', class: "button"
+:javascript
+  $('#micropost_picture').bind('change', function() {
+    var size_in_megabytes = this.files[0].size/1024/1024;
+    if (size_in_megabytes > 5) {
+      alert('Maximum file size is 5MB. Please choose a smaller file.');
+    }
+  });

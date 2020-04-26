@@ -1,0 +1,9 @@
+%h1 Editing scene
+
+= render 'form'
+
+= link_to 'Show', [@movie, @picturescene], class: "button"
+\|
+= link_to 'Back', movie_path(@movie), class: "button"
+\|
+= link_to 'Destroy', [@movie, @picturescene], method: :delete, data: { confirm: 'Are you sure?' }, class: "button"

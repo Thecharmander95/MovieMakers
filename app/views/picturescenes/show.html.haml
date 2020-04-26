@@ -1,0 +1,9 @@
+%p#notice= notice
+
+%p
+  %b Name:
+  = @picturescene.name
+
+= link_to 'Edit', edit_movie_scene_path(@movie, @picturescene), class: "button"
+\|
+= link_to 'Back', movie_path(@movie), class: "button"
