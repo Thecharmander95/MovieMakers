@@ -14,8 +14,6 @@
     = f.file_field :picture, accept: 'image/jpeg,image/gif,image/png'
   .actions
     = f.submit "Add Picture", class: 'button'
-  .actions
-    = f.submit 'Save', class: "button"
 :javascript
   $('#micropost_picture').bind('change', function() {
     var size_in_megabytes = this.files[0].size/1024/1024;

@@ -2,7 +2,7 @@
   %b Name:
   = @movie.name
 %h4
-  %b Script content:
+  %b Script:
 - @movie.scenes.each do |scene|
   .callout
     %h6
@@ -13,16 +13,6 @@
       = scene.content
       %br/
       = link_to 'Edit scene', edit_movie_scene_path(@movie, scene), class: 'button secondary small'
-
-%h4
-  %b Picture's For #{@movie.name}
-- @movie.picturescenes.each do |picturescene|
-  .callout
-    %h6
-      The Picture Label:
-      = picturescene.name
-      %br/
-      = image_tag picturescene.picture.variant(resize: "200x200")
 
 %p= link_to 'New scene', new_movie_scene_path(@movie), class: 'button'
 %p= link_to "Add Picture", new_movie_picturescene_path(@movie), class: "button"

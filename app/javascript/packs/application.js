@@ -15,11 +15,6 @@ require("channels")
 // const images = require.context('../images', true)
 // const imagePath = (name) => images(name, true)
 
-// Printing
-function printPage() {
-    window.print()
-}
-
 // Foundation setup.
 import Foundation from 'foundation-sites'
 $(document).on('turbolinks:load', function() {
@@ -31,3 +26,6 @@ import 'src/application'
 
 // images and fonts
 require.context('../images', true)
+
+// Custom javvascript
+import 'packs/printing'
