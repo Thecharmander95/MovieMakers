@@ -1,11 +1,10 @@
-%p#notice= notice
-
-%p
-  %b Label:
-  = @picturescene.name
--  if @picturescene.picture.attached?
-  .thumbnail= image_tag @picturescene.picture.variant(resize: "200x200")
+%h1 Picture's
+- @picturescenes.each do |pictures|
+  %h6
+    %b Pictures label:
+    = pictures.name
+  - if pictures.picture.attached?
+    .thumbnail= image_tag pictures.picture, class: "small"
+  %br/
 %br/
-= link_to 'Edit', edit_movie_scene_path(@movie, @picturescene), class: "button"
-\|
 = link_to 'Back', movie_path(@movie), class: "button"

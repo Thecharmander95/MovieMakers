@@ -7,6 +7,7 @@ class PicturescenesController < ApplicationController
   end
 
   def show
+    @picturescenes = Picturescene.all
   end
 
   def new

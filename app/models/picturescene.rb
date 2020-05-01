@@ -1,5 +1,5 @@
 class Picturescene < ApplicationRecord
-  validates :title, length: { minimum: 3}
+  validates :name, length: { minimum: 1}
 
   belongs_to :movie
 

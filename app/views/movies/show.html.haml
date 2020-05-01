@@ -1,6 +1,9 @@
 %h1
   %b Name:
   = @movie.name
+%h3
+  %b By:
+  = @movie.by
 %h4
   %b Script:
 - @movie.scenes.each do |scene|
