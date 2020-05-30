@@ -1,5 +1,10 @@
-%h1 Welcome To Movie Makers
-%h4 If you whould like to make your own movie your in the right place click the button below.
-= image_pack_tag("flim.png", class: "small")
-%br/
-= link_to 'Ready', movies_path, class: 'button alert expanded'
+- if user_signed_in?
+  %h1 Welcome To Movie Makers
+  %h4 Click #{link_to "here", movies_path} to Add Edit or Destroy your movies.
+  = image_pack_tag("flim.png", class: "small")
+- else
+  %h1 Welcome To Movie Makers
+  %h4 If you whould like to make your own movie your in the right place click the button below to sign up/ sign in.
+  = image_pack_tag("flim.png", class: "small")
+  %br/
+  = link_to 'Sigin in', new_user_session_path, class: 'button alert expanded'
