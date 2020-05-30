@@ -2831,6 +2831,13 @@ faye-websocket@~0.11.1:
   dependencies:
     websocket-driver ">=0.5.1"
 
+ffmpeg@^0.0.4:
+  version "0.0.4"
+  resolved "https://registry.yarnpkg.com/ffmpeg/-/ffmpeg-0.0.4.tgz#1c460df8e7da5127f62ceef4bfa06c59c89630cb"
+  integrity sha1-HEYN+OfaUSf2LO70v6BsWciWMMs=
+  dependencies:
+    when ">= 0.0.1"
+
 figgy-pudding@^3.5.1:
   version "3.5.2"
   resolved "https://registry.yarnpkg.com/figgy-pudding/-/figgy-pudding-3.5.2.tgz#b4eee8148abb01dcf1d1ac34367d59e12fa61d6e"
@@ -7427,6 +7434,11 @@ what-input@^5.2.7:
   version "5.2.7"
   resolved "https://registry.yarnpkg.com/what-input/-/what-input-5.2.7.tgz#81afbb6b82882cff8c43fa7ff1054aa46f288ffa"
   integrity sha512-ruCP2skyygi0ZHnMicHuZP7vXnJh8uJXs9R7RX488HlWigSdzngdmKo5Ti11Iatp1dnYp55VfioP/WevPaK+xQ==
+
+"when@>= 0.0.1":
+  version "3.7.8"
+  resolved "https://registry.yarnpkg.com/when/-/when-3.7.8.tgz#c7130b6a7ea04693e842cdc9e7a1f2aa39a39f82"
+  integrity sha1-xxMLan6gRpPoQs3J56Hyqjmjn4I=
 
 which-module@^1.0.0:
   version "1.0.0"

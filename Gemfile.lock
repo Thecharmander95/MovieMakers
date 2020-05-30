@@ -124,7 +124,9 @@ GEM
     erubi (1.9.0)
     erubis (2.7.0)
     execjs (2.7.0)
+    fastimage (2.1.7)
     ffi (1.12.2)
+    ffmpeg (0.2.5)
     foundation-rails (6.6.2.0)
       railties (>= 3.1.0)
       sass (>= 3.3.0)
@@ -295,6 +297,8 @@ DEPENDENCIES
   cocoon (~> 1.2.10)
   devise
   dotenv-rails (~> 2.7.5)
+  fastimage
+  ffmpeg
   foundation-rails (~> 6.6.1)
   haml-rails
   hirb
@@ -316,6 +320,3 @@ DEPENDENCIES
 
 RUBY VERSION
    ruby 2.7.1p83
-
-BUNDLED WITH
-   2.1.4

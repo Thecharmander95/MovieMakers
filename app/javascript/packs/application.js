@@ -29,3 +29,4 @@ require.context('../images', true)
 
 // Custom javvascript
 import 'packs/printing'
+import 'packs/direct_upload'

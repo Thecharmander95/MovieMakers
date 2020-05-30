@@ -58,6 +58,6 @@ class PicturescenesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def picturescene_params
-      params.require(:picturescene).permit(:name, :picture)
+      params.require(:picturescene).permit(:name, :picture, :video)
     end
 end
