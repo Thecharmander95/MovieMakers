@@ -3,6 +3,11 @@ class Movie < ApplicationRecord
   has_many :picturescenes, dependent: :destroy
 
   validates :name, length: { minimum: 3}
-  validates :by, length: { minimum: 5}
+  validates :author, length: { minimum: 5}
   belongs_to :user
+
+  def self.find_by_author(author)
+   where('author LIKE ?', "#{author}%").order('author ASC')
+  end
+
 end

@@ -6,6 +6,7 @@ class MoviesController < ApplicationController
   # GET /movies.json
   def index
     @movies = current_user.movies
+    @movies = current_user.movies.order('author ASC')
   end
 
   # GET /movies/1
@@ -70,6 +71,6 @@ class MoviesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def movie_params
-      params.require(:movie).permit(:name, :by)
+      params.require(:movie).permit(:name, :author)
     end
 end

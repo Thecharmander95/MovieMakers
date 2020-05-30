@@ -3,26 +3,18 @@
   = @movie.name
 %h3
   %b By:
-  = @movie.by
-%h4
-  %b Script:
-- @movie.scenes.each do |scene|
-  .callout
-    %h6
-      The scenes name:
-      = scene.name
-      %br/
-      The scenes content:
-      = scene.content
-      %br/
-      = link_to 'Edit scene', edit_movie_scene_path(@movie, scene), class: 'button secondary small'
-
-%p= link_to 'New scene', new_movie_scene_path(@movie), class: 'button'
-%p= link_to "Add Picture", new_movie_picturescene_path(@movie), class: "button"
-%p= link_to "Show Pictures", movie_picturescenes_path(@movie), class: "button"
-.hide_on_print
-  = link_to 'Edit', edit_movie_path(@movie), class: "button"
-  \|
-  = link_to 'Back', movies_path, class: "button"
-  \|
-  = link_to "Print this Page", "javascript:print()", class: "button"
+  = @movie.author
+%h4 Here is the things you can do with this movie
+.grid-x
+  .medium-4.cell
+    %h5 Things With Scenes
+    %p= link_to 'New Scene', new_movie_scene_path(@movie), class: 'button'
+    %p= link_to "Show Scenes", movie_scenes_path(@movie), class: "button"
+  .medium-4.cell
+    %h5 Things with pictures.
+    %p= link_to "Add Picture", new_movie_picturescene_path(@movie), class: "button"
+    %p= link_to "Show Pictures", movie_picturescenes_path(@movie), class: "button"
+  .medium-4.cell
+    %h5 Movie Settings
+    %p= link_to 'Edit Movie', edit_movie_path(@movie), class: "button"
+    %p= link_to 'Back to Movies List', movies_path, class: "button"

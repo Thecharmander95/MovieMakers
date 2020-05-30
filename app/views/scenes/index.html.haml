@@ -1,0 +1,14 @@
+%h1 Scenes for #{@movie.name}
+- @movie.scenes.each do |scene|
+  .callout
+    %h6
+      The scenes name:
+      = scene.name
+      %br/
+      The scenes content:
+      = scene.content
+      %br/
+      = link_to 'Edit scene', edit_movie_scene_path(@movie, scene), class: 'button secondary small'
+= link_to 'Back', movie_path(@movie), class: "button"
+.hide_on_print
+  = link_to "Print this Page", "javascript:print()", class: "button", data: { confirm: 'Warning this not a good page to print from go to the page that is a better print format' }
