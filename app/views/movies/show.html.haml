@@ -19,7 +19,7 @@
 
 %p= link_to 'New scene', new_movie_scene_path(@movie), class: 'button'
 %p= link_to "Add Picture", new_movie_picturescene_path(@movie), class: "button"
-%p= link_to "Show Pictures", movie_picturescene_path(@movie), class: "button"
+%p= link_to "Show Pictures", movie_picturescenes_path(@movie), class: "button"
 .hide_on_print
   = link_to 'Edit', edit_movie_path(@movie), class: "button"
   \|

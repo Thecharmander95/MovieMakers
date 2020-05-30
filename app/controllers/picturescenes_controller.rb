@@ -1,20 +1,13 @@
 class PicturescenesController < ApplicationController
-  before_action :set_movie
-  before_action :set_picturescene, only: [:show, :edit, :update, :destroy]
+  before_action :set_movie, excpet: [:destroy]
+  before_action :set_picturescene, only: [:show, :destroy]
 
   def index
     @picturescenes = Picturescene.all
   end
 
-  def show
-    @picturescenes = Picturescene.all
-  end
-
   def new
     @picturescene = @movie.picturescenes.new
-  end
-
-  def edit
   end
 
   def create
@@ -44,6 +37,8 @@ class PicturescenesController < ApplicationController
   end
 
   def destroy
+    @picturescene = @movie.picturescenes.find(params[:id])
+    @movie = current_user.movies.find(params[:movie_id])
     @picturescene.destroy
     respond_to do |format|
       format.html { redirect_to movie_url(@movie), notice: 'Picture was successfully removed.' }

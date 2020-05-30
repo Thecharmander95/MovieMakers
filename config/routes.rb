@@ -8,5 +8,5 @@ Rails.application.routes.draw do
   end
 
   resources :abouts
-
+  resources :picturescenes, only: :destroy
 end
