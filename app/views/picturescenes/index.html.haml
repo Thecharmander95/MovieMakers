@@ -6,7 +6,7 @@
   - if pictures.picture.attached?
     .thumbnail= image_tag pictures.picture, class: "small"
   %br/
-  = link_to "Remove Image", [pictures.movie, pictures], method: :delete, data: { confirm: "Are you sure?" }, class: "button"
-
+  = link_to "Remove Image", [pictures.movie, pictures], method: :delete, data: { confirm: "Are you sure?" }, class: "pic"
+  %br/
 %br/
 = link_to 'Back to Movie', movie_path(@movie), class: "button"
