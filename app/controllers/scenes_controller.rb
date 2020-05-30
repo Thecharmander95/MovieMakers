@@ -1,16 +1,11 @@
 class ScenesController < ApplicationController
   before_action :set_movie
-  before_action :set_scene, only: [:show, :edit, :update, :destroy]
+  before_action :set_scene, only: [:edit, :update, :destroy]
 
   # GET /scenes
   # GET /scenes.json
   def index
     @scenes = Scene.all
-  end
-
-  # GET /scenes/1
-  # GET /scenes/1.json
-  def show
   end
 
   # GET /scenes/new
@@ -74,6 +69,6 @@ class ScenesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def scene_params
-      params.require(:scene).permit(:name, :content)
+      params.require(:scene).permit(:name, :content, :actor)
     end
 end

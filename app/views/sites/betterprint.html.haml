@@ -1,0 +1,17 @@
+%h1 Scrpit for #{@movie.name}
+- @movie.scenes.each do |scene|
+  %h5
+    The scenes name:
+    = scene.name
+    %br/
+    The scenes content:
+    = scene.content
+    %br/
+    Who plays the part
+    = scene.actor
+    %br/
+%br/
+.hide_on_print
+  = link_to "Print this Page", "javascript:print()", class: "button"
+  %br/
+  = link_to "Back", movie_path(@movie), class:"button"
