@@ -15,7 +15,7 @@ class PicturescenesController < ApplicationController
 
     respond_to do |format|
       if @picturescene.save
-        format.html { redirect_to movie_path(@movie), notice: 'Picture was successfully added.' }
+        format.html { redirect_to movie_path(@movie), notice: 'Picture/video was successfully added.' }
         format.json { render :show, status: :created, location: @picturescene }
       else
         format.html { render :new }
@@ -27,7 +27,7 @@ class PicturescenesController < ApplicationController
   def update
     respond_to do |format|
       if @picturescene.update(picturescene_params)
-        format.html { redirect_to @movie, notice: 'Picture was successfully updated.' }
+        format.html { redirect_to @movie, notice: 'Picture/video was successfully updated.' }
         format.json { render :show, status: :ok, location: @picturescene }
       else
         format.html { render :edit }
@@ -41,7 +41,7 @@ class PicturescenesController < ApplicationController
     @movie = current_user.movies.find(params[:movie_id])
     @picturescene.destroy
     respond_to do |format|
-      format.html { redirect_to movie_url(@movie), notice: 'Picture was successfully removed.' }
+      format.html { redirect_to movie_url(@movie), notice: 'Picture/video was successfully removed.' }
       format.json { head :no_content }
     end
   end

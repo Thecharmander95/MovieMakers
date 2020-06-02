@@ -1,9 +1,3 @@
-GIT
-  remote: https://github.com/codahale/bcrypt-ruby.git
-  revision: 2fbe5418b4fcb8662a6984690796d43489fba3dc
-  specs:
-    bcrypt (3.1.13)
-
 GEM
   remote: https://rubygems.org/
   specs:
@@ -67,16 +61,16 @@ GEM
     autoprefixer-rails (9.7.6)
       execjs
     aws-eventstream (1.1.0)
-    aws-partitions (1.322.0)
-    aws-sdk-core (3.97.0)
+    aws-partitions (1.323.0)
+    aws-sdk-core (3.97.1)
       aws-eventstream (~> 1, >= 1.0.2)
       aws-partitions (~> 1, >= 1.239.0)
       aws-sigv4 (~> 1.1)
       jmespath (~> 1.0)
-    aws-sdk-kms (1.32.0)
+    aws-sdk-kms (1.33.0)
       aws-sdk-core (~> 3, >= 3.71.0)
       aws-sigv4 (~> 1.1)
-    aws-sdk-s3 (1.67.0)
+    aws-sdk-s3 (1.67.1)
       aws-sdk-core (~> 3, >= 3.96.1)
       aws-sdk-kms (~> 1)
       aws-sigv4 (~> 1.1)
@@ -86,6 +80,7 @@ GEM
     babel-transpiler (0.7.0)
       babel-source (>= 4.0, < 6)
       execjs (~> 2.0)
+    bcrypt (3.1.13)
     better_errors (2.7.1)
       coderay (>= 1.0.0)
       erubi (>= 1.0.0)
@@ -107,7 +102,7 @@ GEM
       xpath (~> 3.2)
     childprocess (3.0.0)
     cocoon (1.2.14)
-    coderay (1.1.2)
+    coderay (1.1.3)
     concurrent-ruby (1.1.6)
     crass (1.0.6)
     debug_inspector (0.0.3)
@@ -125,7 +120,7 @@ GEM
     erubis (2.7.0)
     execjs (2.7.0)
     fastimage (2.1.7)
-    ffi (1.12.2)
+    ffi (1.13.0)
     ffmpeg (0.2.5)
     foundation-rails (6.6.2.0)
       railties (>= 3.1.0)
@@ -277,7 +272,7 @@ GEM
       semantic_range (>= 2.3.0)
     websocket-driver (0.7.2)
       websocket-extensions (>= 0.1.0)
-    websocket-extensions (0.1.4)
+    websocket-extensions (0.1.5)
     xpath (3.2.0)
       nokogiri (~> 1.8)
     zeitwerk (2.3.0)
@@ -288,7 +283,7 @@ PLATFORMS
 DEPENDENCIES
   autoprefixer-rails
   aws-sdk-s3
-  bcrypt!
+  bcrypt
   better_errors
   binding_of_caller
   bootsnap
@@ -320,3 +315,6 @@ DEPENDENCIES
 
 RUBY VERSION
    ruby 2.7.1p83
+
+BUNDLED WITH
+   2.1.4

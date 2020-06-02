@@ -5,8 +5,12 @@
     = pictures.name
   - if pictures.picture.attached?
     .thumbnail= image_tag pictures.picture, class: "small"
+    %br/
+    = link_to 'Download', rails_blob_path(pictures.picture, disposition: "attachment")
   - if pictures.video.attached?
-    = video_tag rails_blob_path(pictures.video), controls: true , resize: "50x50"
+    = video_tag rails_blob_path(pictures.video), controls: true, class: "small"
+    %br/
+    = link_to 'Download', rails_blob_path(pictures.video, disposition: "attachment")
   %br/
   = link_to "Remove Image/Video", [pictures.movie, pictures], method: :delete, data: { confirm: "Are you sure?" }, class: "pic"
   %br/
