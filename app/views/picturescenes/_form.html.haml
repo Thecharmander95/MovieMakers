@@ -10,19 +10,22 @@
     = f.label :Give_the_picture_or_video_a_label
     Like when the picture/video shows in the Movie.
     = f.text_field :name
-  %p Remeber you dont have to add both at a time.
+  %p Remeber you dont have to add both at a time. Also DO Not close untill upload is DONE!
+  %p Picture types we accpet are Jpeg, Gif, and Png.
+  %p Video types we accpet are Mp4, Mov, and Webm.
   %span.picture
     (Picture one)
     = f.file_field :picture, accept: 'image/jpeg,image/gif,image/png', direct_upload: true
+  %br/
   %span.video
-    (Video One)
+    (Video choose One)
     = f.file_field :video, accept: 'video/mp4,video/mov,video/webm', direct_upload: true
   .actions
     = f.submit "Add Picture/video", class: 'button'
 :javascript
   $('#micropost_picture').bind('change', function() {
     var size_in_megabytes = this.files[0].size/1024/1024;
-    if (size_in_megabytes > 50000) {
-      alert('Maximum file size is 50000MB. Please choose a smaller file.');
+    if (size_in_megabytes > 5000000000) {
+      alert('Maximum file size is 5 Petabytes. Please choose a smaller file.');
     }
   });

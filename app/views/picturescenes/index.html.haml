@@ -7,6 +7,7 @@
     .thumbnail= image_tag pictures.picture, class: "small"
     %br/
     = link_to 'Download', rails_blob_path(pictures.picture, disposition: "attachment")
+    %br/
   - if pictures.video.attached?
     = video_tag rails_blob_path(pictures.video), controls: true, class: "small"
     %br/
