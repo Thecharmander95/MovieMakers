@@ -10,16 +10,13 @@
     = f.label :Give_the_picture_or_video_a_label
     Like when the picture/video shows in the Movie.
     = f.text_field :name
-  %p Remeber you dont have to add both at a time. Also DO Not close untill upload is DONE!
+  %p Remeber you have to add ONE at a time. Also DO Not close untill upload is DONE!
   %p Picture types we accpet are Jpeg, Gif, and Png.
   %p Video types we accpet are Mp4, Mov, and Webm.
   %span.picture
-    (Picture one)
-    = f.file_field :picture, accept: 'image/jpeg,image/gif,image/png', direct_upload: true
+    (Picture or video)
+    = f.file_field :picture, accept: 'image/jpeg,image/gif,image/png,video/mp4,video/mov,video/webm', direct_upload: true
   %br/
-  %span.video
-    (Video choose One)
-    = f.file_field :video, accept: 'video/mp4,video/mov,video/webm', direct_upload: true
   .actions
     = f.submit "Add Picture/video", class: 'button'
 :javascript
