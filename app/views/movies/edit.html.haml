@@ -1,7 +1,9 @@
-%h1 Editing movie
+%h1
+  Editing Movie
+  = @movie.name
 
 = render 'form'
 
-= link_to 'Show', @movie, class: "button"
+= link_to 'Show Movie', @movie, class: "button"
 \|
-= link_to 'Back', movies_path, class: "button"
+= link_to 'Back To Listing Movies', movies_path, class: "button"
