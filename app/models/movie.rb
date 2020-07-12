@@ -1,6 +1,7 @@
 class Movie < ApplicationRecord
   has_many :scenes, dependent: :destroy
   has_many :picturescenes, dependent: :destroy
+  has_many :actors, dependent: :destroy
 
   validates :name, length: { minimum: 3}
   validates :author, length: { minimum: 5}

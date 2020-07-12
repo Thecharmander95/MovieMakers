@@ -1,0 +1,13 @@
+= form_for [@movie, @actor] do |f|
+  - if @actor.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(@actor.errors.count, "error")} prohibited the actor from being added:"
+      %ul
+        - @actor.errors.full_messages.each do |message|
+          %li= message
+
+  .field
+    = f.label :name
+    = f.text_field :name
+  .actions
+    = f.submit 'Save', class: "button"

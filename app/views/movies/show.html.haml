@@ -6,15 +6,19 @@
   = @movie.author
 %h4 Here is the things you can do with this movie
 .grid-x
-  .medium-4.cell
+  .medium-3.cell
     %h5 Things With Scenes
     %p= link_to 'New Scene', new_movie_scene_path(@movie), class: 'button'
     %p= link_to "Show Scenes", movie_scenes_path(@movie), class: "button"
-  .medium-4.cell
+  .medium-3.cell
     %h5 Things with pictures/video.
     %p= link_to "Add Picture/video", new_movie_picturescene_path(@movie), class: "button"
     %p= link_to "Show Pictures/videos", movie_picturescenes_path(@movie), class: "button"
-  .medium-4.cell
+  .medium-3.cell
+    %h5 Actors Add or Remove
+    %p= link_to "Add Actor", new_movie_actor_path(@movie), class: "button"
+    %p= link_to "List/Remove Actors", movie_actors_path(@movie), class: "button"
+  .medium-3.cell
     %h5 Movie Settings
     %p= link_to 'Edit Movie', edit_movie_path(@movie), class: "button"
     %p= link_to 'Delete Movie', @movie, method: :delete, data: { confirm: 'Are you sure? You did good! Why give up now?' }, class: "button"
