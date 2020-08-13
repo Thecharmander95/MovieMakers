@@ -5,4 +5,5 @@
       The actors name:
       = actor.name
       %br/
+      = link_to 'Remove Actor', [@movie, actor], method: :delete, data: { confirm: 'Are you sure?' }
 = link_to 'Back', movie_path(@movie), class: "button"

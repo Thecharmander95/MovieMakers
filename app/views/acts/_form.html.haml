@@ -1,0 +1,13 @@
+= form_for [@movie, @act] do |f|
+  - if @act.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(@act.errors.count, "error")} prohibited the act from being added:"
+      %ul
+        - @act.errors.full_messages.each do |message|
+          %li= message
+
+  .field
+    = f.label :Which_act_is_this?
+    = f.text_field :part
+  .actions
+    = f.submit 'Save', class: "button"
