@@ -5,8 +5,8 @@ Rails.application.routes.draw do
   resources :movies do
     resources :scenes
     resources :picturescenes
-    resources :actors
     resources :acts
+    resources :credits
     get :betterprint, to: "sites#betterprint"
   end
 

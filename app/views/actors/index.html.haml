@@ -1,9 +1,0 @@
-%h1 Actors for #{@movie.name}
-- @movie.actors.each do |actor|
-  .callout
-    %h6
-      The actors name:
-      = actor.name
-      %br/
-      = link_to 'Remove Actor', [@movie, actor], method: :delete, data: { confirm: 'Are you sure?' }
-= link_to 'Back', movie_path(@movie), class: "button"
