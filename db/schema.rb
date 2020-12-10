@@ -55,8 +55,10 @@ ActiveRecord::Schema.define(version: 2020_11_29_223936) do
   create_table "credits", force: :cascade do |t|
     t.text "person"
     t.text "for"
+    t.bigint "movie_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["movie_id"], name: "index_credits_on_movie_id"
   end
 
   create_table "movies", force: :cascade do |t|
@@ -105,6 +107,7 @@ ActiveRecord::Schema.define(version: 2020_11_29_223936) do
   end
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
+  add_foreign_key "credits", "movies"
   add_foreign_key "movies", "users"
   add_foreign_key "picturescenes", "movies"
   add_foreign_key "scenes", "movies"
