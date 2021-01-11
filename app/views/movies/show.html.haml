@@ -17,7 +17,7 @@
   .medium-3.cell
     %h5 Credits Add or Remove
     %p= link_to "Add someone to credits", new_movie_credit_path(@movie), class: "button"
-    %p= link_to "List/Remove people from credits", movie_credit_path(@movie), class: "button"
+    %p= link_to "List/Remove people from credits", movie_creditshow_path(@movie), class: "button"
   .medium-3.cell
     %h5 Movie Settings
     %p= link_to 'Edit Movie', edit_movie_path(@movie), class: "button"
