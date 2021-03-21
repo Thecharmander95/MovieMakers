@@ -5,7 +5,7 @@
     "@rails/actioncable": "^6",
     "@rails/activestorage": "^6",
     "@rails/ujs": "^6",
-    "@rails/webpacker": "^5",
+    "@rails/webpacker": "5.2.1",
     "autolinker": "^3.14.1",
     "ffmpeg": "^0.0.4",
     "foundation-sites": "^6",
@@ -14,7 +14,7 @@
     "what-input": "^5.2.7"
   },
   "devDependencies": {
-    "webpack-dev-server": "^3.10.3"
+    "webpack-dev-server": "^3.11.2"
   },
   "engines": {
     "yarn": "1.22.x",

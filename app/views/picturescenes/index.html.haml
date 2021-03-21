@@ -1,17 +1,18 @@
 %h1 Picture's
 - @movie.picturescenes.each do |pictures|
-  %h6
-    %b Pictures label:
-    = pictures.name
-  %br/
-  - if pictures.picture.attached?
-    - if pictures.picture.image?
-      .thumbnail= image_tag pictures.picture.variant(resize: "200x200")
-    - if pictures.picture.video?
-      = video_tag rails_blob_path(pictures.picture), controls: true, class: "small"
+  .callout
+    %h6
+      %b Pictures label:
+      = pictures.name
     %br/
-  %br/
-  = link_to "Remove Image/Video", [pictures.movie, pictures], method: :delete, data: { confirm: "Are you sure?" }, class: "pic"
-  %br/
+    - if pictures.picture.attached?
+      - if pictures.picture.image?
+        .thumbnail= image_tag pictures.picture.variant(resize: "200x200")
+      - if pictures.picture.video?
+        = video_tag rails_blob_path(pictures.picture), controls: true, class: "small"
+      %br/
+    %br/
+    = link_to "Remove Image/Video", [pictures.movie, pictures], method: :delete, data: { confirm: "Are you sure?" }, class: "pic"
+    %br/
 %br/
 = link_to 'Back to Movie', movie_path(@movie), class: "button"

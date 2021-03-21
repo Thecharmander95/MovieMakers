@@ -8,7 +8,6 @@ Rails.application.routes.draw do
     resources :acts
     resources :credits
     get :betterprint, to: "sites#betterprint"
-    get :creditshow, to: "sites#creditshow"
     get :bettercreditprint, to: "sites#bettercreditprint"
   end
 

@@ -9,6 +9,9 @@ class CreditsController < ApplicationController
   def edit
   end
 
+  def index
+  end
+
   def create
     @credit = @movie.credits.new(credit_params)
 

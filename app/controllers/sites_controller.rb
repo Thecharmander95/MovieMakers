@@ -6,10 +6,6 @@ class SitesController < ApplicationController
     @movie = current_user.movies.find(params[:movie_id])
   end
 
-  def creditshow
-    @movie = current_user.movies.find(params[:movie_id])
-  end
-
   def bettercreditprint
     @movie = current_user.movies.find(params[:movie_id])
   end

@@ -1,17 +1,19 @@
 %h1 Your movies
 %h5 All of your movies have been ordered by the name of the author/prodution team.
-- @movies.each do |movie|
-  .callout
-    Your movies name =
-    = movie.name
-    %br/
-    Who the movie is by =
-    = movie.author
-    %br/
-    = link_to 'Add to the movie', movie
-    %br/
-    = link_to 'Edit The Name/Creater', edit_movie_path(movie)
-    %br/
-    = link_to 'Delete Movie', movie, method: :delete, data: { confirm: 'Are you sure? You did good! Why give up now?' }
+.grid-x
+  - @movies.each do |movie|
+    .medium-4.cell
+      .callout
+        Your movies name =
+        = movie.name
+        %br/
+        Who the movie is by =
+        = movie.author
+        %br/
+        = link_to 'Add to the movie', movie
+        %br/
+        = link_to 'Edit The Name/Creater', edit_movie_path(movie)
+        %br/
+        = link_to 'Delete Movie', movie, method: :delete, data: { confirm: 'Are you sure? You did good! Why give up now?' }
 
 = link_to 'New Movie', new_movie_path, class: "button"
