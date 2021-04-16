@@ -7,7 +7,7 @@ end
 
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '~> 6.1.1'
+gem 'rails', '~> 6.1'
 # Use postgresql as the database for Active Record
 gem 'pg'
 # Use Puma as the app server
@@ -68,4 +68,4 @@ group :development do
   gem 'spring-watcher-listen', '~> 2.0.0'
 end
 
-ruby '3.0.0'
+ruby '3.0.1'
