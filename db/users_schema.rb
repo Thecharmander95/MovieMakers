@@ -10,22 +10,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_05_07_202534) do
+ActiveRecord::Schema.define(version: 2021_05_15_160301) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
-
-  create_table "abouts", force: :cascade do |t|
-    t.string "title"
-    t.text "toppara"
-    t.text "change"
-    t.text "list1"
-    t.text "list2"
-    t.text "list3"
-    t.text "buttum"
-    t.text "linkgithub"
-    t.text "githubtitle"
-  end
 
   create_table "active_storage_attachments", force: :cascade do |t|
     t.string "name", null: false
@@ -59,26 +47,6 @@ ActiveRecord::Schema.define(version: 2021_05_07_202534) do
     t.text "part"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-  end
-
-  create_table "announcements", force: :cascade do |t|
-    t.string "text"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-  end
-
-  create_table "articles", force: :cascade do |t|
-    t.string "title"
-    t.text "description"
-    t.string "content"
-    t.bigint "user_id", null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.text "sources"
-    t.text "articleused"
-    t.string "slug"
-    t.index ["slug"], name: "index_articles_on_slug", unique: true
-    t.index ["user_id"], name: "index_articles_on_user_id"
   end
 
   create_table "badusers", force: :cascade do |t|
@@ -128,15 +96,6 @@ ActiveRecord::Schema.define(version: 2021_05_07_202534) do
     t.index ["movie_id"], name: "index_credits_on_movie_id"
   end
 
-  create_table "disables", force: :cascade do |t|
-    t.string "postdisable"
-    t.string "conversationdisable"
-    t.string "articledisable"
-    t.string "chatroomdisable"
-    t.string "storydisable"
-    t.text "homedisable"
-  end
-
   create_table "errors", force: :cascade do |t|
     t.string "error"
     t.text "description"
@@ -161,18 +120,6 @@ ActiveRecord::Schema.define(version: 2021_05_07_202534) do
     t.text "with"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-  end
-
-  create_table "labouts", force: :cascade do |t|
-    t.string "title"
-    t.text "ltoppara"
-    t.text "lchange"
-    t.text "llist1"
-    t.text "llist2"
-    t.text "llist3"
-    t.text "lbuttum"
-    t.text "llinkgithub"
-    t.text "lgithubtitle"
   end
 
   create_table "messages", force: :cascade do |t|
@@ -248,14 +195,6 @@ ActiveRecord::Schema.define(version: 2021_05_07_202534) do
     t.index ["movie_id"], name: "index_scenes_on_movie_id"
   end
 
-  create_table "stories", force: :cascade do |t|
-    t.text "content"
-    t.bigint "user_id", null: false
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.index ["user_id"], name: "index_stories_on_user_id"
-  end
-
   create_table "suggestions", force: :cascade do |t|
     t.string "name"
     t.bigint "user_id", null: false
@@ -270,18 +209,12 @@ ActiveRecord::Schema.define(version: 2021_05_07_202534) do
     t.string "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
-    t.integer "sign_in_count", default: 0, null: false
-    t.datetime "current_sign_in_at"
-    t.datetime "last_sign_in_at"
-    t.inet "current_sign_in_ip"
-    t.inet "last_sign_in_ip"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.text "body"
     t.string "username", null: false
     t.string "role"
     t.string "slug"
-    t.string "phone"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
     t.index ["slug"], name: "index_users_on_slug", unique: true
@@ -290,7 +223,6 @@ ActiveRecord::Schema.define(version: 2021_05_07_202534) do
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
-  add_foreign_key "articles", "users"
   add_foreign_key "comments", "posts"
   add_foreign_key "comments", "users"
   add_foreign_key "credits", "movies"
@@ -302,6 +234,5 @@ ActiveRecord::Schema.define(version: 2021_05_07_202534) do
   add_foreign_key "room_messages", "rooms"
   add_foreign_key "room_messages", "users"
   add_foreign_key "scenes", "movies"
-  add_foreign_key "stories", "users"
   add_foreign_key "suggestions", "users"
 end
