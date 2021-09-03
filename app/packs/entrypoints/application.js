@@ -22,11 +22,11 @@ $(document).on('turbolinks:load', function() {
 });
 
 // Custom scss files.
-import 'src/application'
+import './application'
 
 // images and fonts
 require.context('../images', true)
 
 // Custom javvascript
-import 'packs/printing'
-import 'packs/direct_upload'
+import 'src/printing'
+import 'src/direct_upload'
