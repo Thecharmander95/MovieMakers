@@ -1,0 +1,48 @@
+= form_for user do |f|
+  -if current_user == user
+    - if f.object.errors.any?
+      #error_explanation
+        %h2= "#{pluralize(f.object.errors.count, "error")} prohibited this post from being saved:"
+        %ul
+          - f.object.errors.full_messages.each do |message|
+            %li= message
+    .grid-x
+      .medium-4.cell
+        .field
+          = f.label :Email
+          %br/
+          = f.email_field :email, autofocus: true, autocomplete: "email"
+        .field
+          = f.label :Password
+          - if @minimum_password_length
+            %em
+              = @minimum_password_length
+              characters minimum
+          %i (Leave blank if you don't want to change it)
+          %br/
+          = f.password_field :Password, autocomplete: "new-password"
+          .field
+            = f.label :Password_Confirmation
+            = f.password_field :password_confirmation, autocomplete: "new-password"
+      .medium-4.cell
+        .field
+          = f.label :Username
+          %br/
+          = f.text_field :username
+        .field
+          = f.label :Bio
+          %br/
+          = f.text_area :body, rows: 2
+      .medium-4.cell
+        .field
+          = f.label :avatar, "Profile Picture"
+          = f.file_field :avatar, accept: 'image/jpeg,image/gif,image/png'
+          - if f.object.avatar.attached?
+            = image_tag f.object.avatar.variant(resize_to_limit: [250, 250])
+  .actions
+    = f.submit "Update", class:"button"
+= link_to "Back", root_path, class: "button"
+-if current_user == user
+  %h3 Cancel my account
+  %h5
+    Whant to leave LionNav. #{button_to "Remove my account", user_path, method: :delete , data: { confirm: "Are you sure? All data will be deleted." }, class: "button"}

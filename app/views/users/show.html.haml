@@ -1,0 +1,16 @@
+.grid-x
+  .medium-2.cell
+    - if @user.avatar.attached?
+      = image_tag @user.avatar.variant(resize_to_fill: [100, 100])
+    - else
+      .small
+        = image_pack_tag ("profilepic.png")
+  .medium-3.cell
+    %h4= @user.username
+    %h5
+      Joined
+      = time_ago_in_words(@user.created_at)
+      ago
+    .selectWrapper
+      .selectBox
+        = link_to 'Edit Profile', edit_user_path(current_user)
