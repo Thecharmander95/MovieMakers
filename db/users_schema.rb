@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_05_15_160301) do
+ActiveRecord::Schema.define(version: 2021_06_29_020657) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -49,6 +49,12 @@ ActiveRecord::Schema.define(version: 2021_05_15_160301) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  create_table "announcements", force: :cascade do |t|
+    t.string "text"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
   create_table "badusers", force: :cascade do |t|
     t.text "user"
     t.text "what"
@@ -82,9 +88,6 @@ ActiveRecord::Schema.define(version: 2021_05_15_160301) do
     t.integer "receiver_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["receiver_id"], name: "index_conversations_on_receiver_id"
-    t.index ["sender_id", "receiver_id"], name: "index_conversations_on_sender_id_and_receiver_id", unique: true
-    t.index ["sender_id"], name: "index_conversations_on_sender_id"
   end
 
   create_table "credits", force: :cascade do |t|
@@ -96,11 +99,30 @@ ActiveRecord::Schema.define(version: 2021_05_15_160301) do
     t.index ["movie_id"], name: "index_credits_on_movie_id"
   end
 
+  create_table "disables", force: :cascade do |t|
+    t.string "postdisable"
+    t.string "conversationdisable"
+    t.string "articledisable"
+    t.string "chatroomdisable"
+    t.string "storydisable"
+  end
+
   create_table "errors", force: :cascade do |t|
     t.string "error"
     t.text "description"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "forums", force: :cascade do |t|
+    t.text "question"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.bigint "user_id", null: false
+    t.string "slug"
+    t.string "title"
+    t.index ["slug"], name: "index_forums_on_slug", unique: true
+    t.index ["user_id"], name: "index_forums_on_user_id"
   end
 
   create_table "friendly_id_slugs", force: :cascade do |t|
@@ -114,12 +136,16 @@ ActiveRecord::Schema.define(version: 2021_05_15_160301) do
     t.index ["sluggable_type", "sluggable_id"], name: "index_friendly_id_slugs_on_sluggable_type_and_sluggable_id"
   end
 
-  create_table "helps", force: :cascade do |t|
-    t.text "email"
-    t.text "number"
-    t.text "with"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
+  create_table "labouts", force: :cascade do |t|
+    t.string "title"
+    t.text "ltoppara"
+    t.text "lchange"
+    t.text "llist1"
+    t.text "llist2"
+    t.text "llist3"
+    t.text "lbuttum"
+    t.text "llinkgithub"
+    t.text "lgithubtitle"
   end
 
   create_table "messages", force: :cascade do |t|
@@ -195,12 +221,12 @@ ActiveRecord::Schema.define(version: 2021_05_15_160301) do
     t.index ["movie_id"], name: "index_scenes_on_movie_id"
   end
 
-  create_table "suggestions", force: :cascade do |t|
-    t.string "name"
+  create_table "stories", force: :cascade do |t|
+    t.text "content"
     t.bigint "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["user_id"], name: "index_suggestions_on_user_id"
+    t.index ["user_id"], name: "index_stories_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -226,6 +252,7 @@ ActiveRecord::Schema.define(version: 2021_05_15_160301) do
   add_foreign_key "comments", "posts"
   add_foreign_key "comments", "users"
   add_foreign_key "credits", "movies"
+  add_foreign_key "forums", "users"
   add_foreign_key "messages", "conversations"
   add_foreign_key "messages", "users"
   add_foreign_key "movies", "users"
@@ -234,5 +261,5 @@ ActiveRecord::Schema.define(version: 2021_05_15_160301) do
   add_foreign_key "room_messages", "rooms"
   add_foreign_key "room_messages", "users"
   add_foreign_key "scenes", "movies"
-  add_foreign_key "suggestions", "users"
+  add_foreign_key "stories", "users"
 end
