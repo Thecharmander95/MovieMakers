@@ -1,9 +1,27 @@
-%h1
-  Editing Movie
-  = @movie.name
+.grid-x
+  .medium-3.cell
+  .medium-6.cell.space
+    .callout.round
+      %h1 Editing Movie #{@movie.name}
 
-= render 'form'
+      = form_for @movie do |f|
+        - if @movie.errors.any?
+          #error_explanation
+            %h2= "#{pluralize(@movie.errors.count, "error")} prohibited this movie from being saved:"
+            %ul
+              - @movie.errors.full_messages.each do |message|
+                %li= message
 
-= link_to 'Show Movie', @movie, class: "button"
-\|
-= link_to 'Back To Listing Movies', movies_path, class: "button"
+        .field
+          = f.label :name
+          = f.text_field :name
+        .field
+          = f.label :Who_is_this_movie_by?
+          (First and last Name or production team)
+          = f.text_field :author
+        .actions
+          = f.submit 'Save', class: "button"
+
+      = link_to 'Show Movie', @movie, class: "button"
+      %br/
+      = link_to 'Back To Listing Movies', movies_path, class: "button"

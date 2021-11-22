@@ -1,12 +1,11 @@
 .title-bar{"data-hide-for" => "medium", "data-responsive-toggle" => "responsive-menu"}
   %button.menu-icon{"data-toggle" => "responsive-menu", :type => "button"}
   .title-bar-title Movie Makers
-%br/
 #responsive-menu.top-bar
   .top-bar-left
     %ul.dropdown.menu{"data-dropdown-menu" => ""}
       %li.menu
-        %h4= link_to 'Home', root_path
+        %li= link_to 'Home', root_path
   .top-bar-right
     %ul.dropdown.menu{"data-dropdown-menu" => ""}
       - if user_signed_in?
@@ -16,3 +15,4 @@
       - else
         %li= link_to 'Sign Up', new_user_registration_path
         %li= link_to 'Login', new_user_session_path
+.padding-bottom

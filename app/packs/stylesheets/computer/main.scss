@@ -1,0 +1,106 @@
+html body {
+  background-color: aliceblue;
+}
+
+.small {
+  height: 100px;
+  width: 100px;
+}
+// Boxs
+.selectWrapper{
+  border-radius:36px;
+  display:inline-block;
+  overflow:hidden;
+  background:#cccccc;
+  border:1px solid #cccccc;
+}
+.selectBox{
+  width:100px;
+  height:25px;
+  border:0px;
+  outline:none;
+  text-align:center
+}
+
+.forum{
+  padding-left: 10px;
+  padding-top: 4px;
+  padding-bottom: 5px;
+  color: black;
+}
+
+.forum:hover{
+  height: 100%;
+  border: 1px;
+  border-radius: 10px;
+  background-color: lightgray;
+  padding-left: 10px;
+  padding-top: 4px;
+  color: black;
+}
+
+// Borders
+
+.border-right{
+  border-right: 2px solid gray;
+}
+
+.border-left {
+  border-left: 2px solid gray;
+  padding-left: 10px;
+}
+
+.border-bottom {
+  border-bottom: 1px solid gray;
+}
+
+// Buttons
+
+a.button {
+    border-radius: 10px;
+    background-color: darkgray;
+    color:black;
+}
+
+a.button:hover {
+    border-radius: 10px;
+    background-color: lightgray;
+    color: gray;
+}
+
+input.button {
+    border-radius: 10px;
+    background-color: darkgray;
+    color:black;
+}
+
+input.button:hover {
+    border-radius: 10px;
+    background-color: lightgray;
+    color: gray;
+}
+
+// Text Fileds
+input#forum_title, textarea#forum_question {
+  border-radius: 10px;
+}
+
+.content-mobile {
+  display: none;
+}
+
+.signin {
+  padding-top: 10%;
+}
+
+.push-2 {
+  padding-left: 4%;
+}
+
+.videobox {
+  border-radius: 10px;
+}
+
+.padding-bottom{
+  padding-bottom: 10px
+}

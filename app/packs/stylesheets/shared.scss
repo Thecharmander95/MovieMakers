@@ -1,0 +1,47 @@
+.active {
+  border-top-right-radius: 20px;
+  border-bottom-right-radius: 20px;
+  background-color: lightgray;
+  padding-right: 10%;
+}
+
+.icon{
+  height: 40px;
+  width: 40px;
+}
+
+.text-padding-home-icon {
+  padding-top: 18%;
+}
+
+.unactive:hover {
+  border-top-right-radius: 20px;
+  border-bottom-right-radius: 20px;
+  background-color: lighten(lightgray, 10%);
+  padding-right: 10%;
+}
+
+.text-padding-personal-icon {
+  padding-top: 7%;
+}
+
+.text-padding-data-icon {
+  padding-top: 6%;
+}
+
+.callout.info {
+  border-radius: 10px;
+}
+
+img.profileimg {
+  width: 10px;
+  height: 10px;
+}
+
+.round {
+  border-radius: 10px;
+}
+
+.center{
+  text-align: center;
+}

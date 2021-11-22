@@ -1,0 +1,16 @@
+.top-bar, .top-bar ul {
+  background-color: black;
+}
+
+.top-bar a {
+    color: lightgray;
+}
+
+.title-bar {
+  background-color: black;
+  color: lightgray;
+}
+
+.dropdown.menu > li.is-dropdown-submenu-parent > a::after{
+  border-color: #cccccc transparent transparent;
+}

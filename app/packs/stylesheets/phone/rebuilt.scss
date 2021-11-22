@@ -1,0 +1,22 @@
+// Remade buttons
+.formbutton{
+  border-radius: 10px;
+  display: block;
+  background-color: darkgray;
+  color:black;
+  width: 100%;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  text-align: center;
+}
+
+.formbutton:hover {
+  border-radius: 10px;
+  background-color: darkgray;
+  color:black;
+  padding-left: 50px;
+  padding-right: 50px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  text-align: center;
+}
