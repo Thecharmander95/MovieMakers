@@ -1,18 +1,16 @@
-%h1 Picture's
-- @movie.picturescenes.each do |pictures|
-  .callout
-    %h6
-      %b Pictures label:
-      = pictures.name
-    %br/
-    - if pictures.picture.attached?
-      - if pictures.picture.image?
-        .thumbnail= image_tag pictures.picture.variant(resize: "200x200")
-      - if pictures.picture.video?
-        = video_tag rails_blob_path(pictures.picture), controls: true, class: "small"
-      %br/
-    %br/
-    = link_to "Remove Image/Video", [pictures.movie, pictures], method: :delete, data: { confirm: "Are you sure?" }, class: "pic"
-    %br/
-%br/
+%h1 Pictures and Videos
+.grid-x
+  - @movie.picturescenes.each do |pictures|
+    .medium-3.cell
+      .callout
+        %h6
+          %b Pictures label:
+          = pictures.name
+        - if pictures.picture.attached?
+          - if pictures.picture.image?
+            .thumbnail= image_tag pictures.picture.variant(resize: "200x200")
+          - if pictures.picture.video?
+            = video_tag rails_blob_path(pictures.picture), controls: true, class: "small"
+        %br/
+        = link_to "Remove Image/Video", [pictures.movie, pictures], method: :delete, data: { confirm: "Are you sure?" }, class: "pic"
 = link_to 'Back to Movie', movie_path(@movie), class: "button"

@@ -2,7 +2,7 @@
   .medium-3.cell
   .medium-6.cell.space
     .callout.round
-      %h1 Editing Movie #{@movie.name}
+      %h1 Editing #{@movie.name}
 
       = form_for @movie do |f|
         - if @movie.errors.any?
@@ -21,7 +21,4 @@
           = f.text_field :author
         .actions
           = f.submit 'Save', class: "button"
-
-      = link_to 'Show Movie', @movie, class: "button"
-      %br/
-      = link_to 'Back To Listing Movies', movies_path, class: "button"
+      = link_to 'Back To Movie', movie_path(@movie), class: "button"
