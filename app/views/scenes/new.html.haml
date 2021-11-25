@@ -1,5 +1,27 @@
-%h1 New scene
+.grid-x
+  .medium-3.cell
+  .medium-6.cell
+    .callout.round
+      %h1 New scene
 
-= render 'form'
+      = form_for [@movie, @scene] do |f|
+        - if @scene.errors.any?
+          #error_explanation
+            %h2= "#{pluralize(@scene.errors.count, "error")} prohibited this scene from being saved:"
+            %ul
+              - @scene.errors.full_messages.each do |message|
+                %li= message
 
-= link_to 'Back', movie_path(@movie), class: "button"
+        .field
+          = f.label :name
+          = f.text_field :name
+        .field
+          = f.label :content
+          = f.text_area :content
+        .field
+          = f.label :Actor
+          = f.text_field :actor
+        .actions
+          = f.submit 'Save', class: "button"
+
+        = link_to 'Back', movie_path(@movie), class: "button"
