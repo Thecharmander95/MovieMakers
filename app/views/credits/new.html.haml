@@ -1,5 +1,24 @@
-%h1 New Credit
-%br/
-= render "form"
-%br/
-= link_to "Back", @movie, class: "button"
+.grid-x
+  .medium-3.cell
+  .medium-6.cell
+    .callout.round
+      %h1 New Credit
+
+      = form_for [@movie, @credit] do |f|
+        - if @credit.errors.any?
+          #error_explanation
+            %h2= "#{pluralize(@credit.errors.count, "error")} prohibited the credit from being added:"
+            %ul
+              - @credit.errors.full_messages.each do |message|
+                %li= message
+
+        .field
+          = f.label :Who_is_it_for?
+          = f.text_field :person
+        .field
+          = f.label :What_part_did_they_do_or_what_they_did?
+          = f.text_field :for
+        .actions
+          = f.submit 'Save', class: "button"
+
+        = link_to "Back", @movie, class: "button"
