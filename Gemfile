@@ -68,4 +68,4 @@ group :development do
   gem 'spring-watcher-listen', '~> 2.0.0'
 end
 
-ruby '3.0.2'
+ruby '3.0.3'
