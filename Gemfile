@@ -7,14 +7,12 @@ end
 
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '~> 6.1.4'
+gem 'rails', '~> 7.0'
 # Use postgresql as the database for Active Record
 gem 'pg'
 # Use Puma as the app server
 # gem 'puma', '~> 5'
 gem "passenger", ">= 5.3.2", require: "phusion_passenger/rack_handler"
-# Turbolinks makes navigating your web application faster. Read more: https://github.com/turbolinks/turbolinks
-gem 'turbolinks', '~> 5'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 2.10'
 gem 'jquery-rails'
@@ -44,9 +42,19 @@ gem 'fastimage'
 gem 'haml-rails'
 gem 'html2haml'
 
-# Webpacker
-gem 'webpacker', '~> 5.x'
-gem 'cocoon', '~> 1.2.10'
+# New Gems
+# Use Kredis to get higher-level data types in Redis [https://github.com/rails/kredis]
+# gem "kredis"
+# Use JavaScript with ESM import maps [https://github.com/rails/importmap-rails]
+gem "importmap-rails"
+# Hotwire's SPA-like page accelerator [https://turbo.hotwired.dev]
+gem "turbo-rails"
+# Hotwire's modest JavaScript framework [https://stimulus.hotwired.dev]
+gem "stimulus-rails"
+# The original asset pipeline for Rails [https://github.com/rails/sprockets-rails]
+gem "sprockets-rails"
+gem "sassc-rails"
+
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
