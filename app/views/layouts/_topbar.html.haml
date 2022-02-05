@@ -12,7 +12,7 @@
         - if user_signed_in?
           %li= link_to 'Movies', movies_path
           %li= link_to 'Edit User', edit_user_path(current_user)
-          %li= link_to 'Sign Out', destroy_user_session_path, method: :delete
+          %li= link_to 'Sign Out', destroy_user_session_path, 'data-turbo-method': :delete
         - else
           %li= link_to 'Sign Up', new_user_registration_path
           %li= link_to 'Login', new_user_session_path
