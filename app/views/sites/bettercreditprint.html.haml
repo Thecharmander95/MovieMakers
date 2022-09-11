@@ -1,9 +1,7 @@
 %h1 Credit for #{@movie.name}
 - @movie.credits.each do |credit|
-  %h5 Who the actor is.
   %h5= credit.person
   %br/
-  %h5 What part they played, who they are, and what they did.
   %h5= credit.for
 %br/
 .hide_on_print

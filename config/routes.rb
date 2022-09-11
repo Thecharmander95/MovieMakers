@@ -1,6 +1,9 @@
 Rails.application.routes.draw do
   root 'sites#home'
-  devise_for :users
+  
+  devise_for :users, controllers: {
+    registrations: 'users/registrations'
+  }
 
   resources :users
 

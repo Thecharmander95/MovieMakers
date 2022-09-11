@@ -4,7 +4,7 @@
       = image_tag @user.avatar.variant(resize_to_fill: [100, 100])
     - else
       .small
-        = image_pack_tag ("profilepic.png")
+        = image_tag ("profilepic.png")
   .medium-3.cell
     %h4= @user.username
     %h5
