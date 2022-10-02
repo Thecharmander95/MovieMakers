@@ -18,7 +18,7 @@ gem "passenger", ">= 5.3.2", require: "phusion_passenger/rack_handler"
 gem 'jbuilder', '~> 2.10'
 gem 'jquery-rails'
 # Use Redis adapter to run Action Cable in production
-# gem 'redis', '~> 3.0'
+gem 'redis', '~> 3.0'
 # Use ActiveModel has_secure_password
 gem 'bcrypt'
 # Use Capistrano for deployment
