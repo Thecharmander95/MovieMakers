@@ -45,4 +45,4 @@
 -if current_user == user
   %h3 Cancel my account
   %h5
-    Whant to leave LionNav. #{button_to "Remove my account", user_path, 'data-turbo-method': :delete , data: { confirm: "Are you sure? All data will be deleted." }, class: "button"}
+    = link_to "Delete", user, data: { "turbo-method": :delete, turbo_confirm: "Notice this will delete all your things accross LionNav.com. Do you wish to continue?" }, class: "button"
