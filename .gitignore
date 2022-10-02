@@ -30,3 +30,6 @@ yarn-debug.log*
 
 /config/master.key
 /storage
+
+/passenger.5003.pid
+/passenger.5003.pid.lock

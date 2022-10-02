@@ -16,6 +16,6 @@ Rails.application.routes.draw do
     get :bettercreditprint, to: "sites#bettercreditprint"
   end
 
-  resources :abouts
+  resources :mabouts
   resources :picturescenes, only: :destroy
 end

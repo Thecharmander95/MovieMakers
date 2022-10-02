@@ -24,21 +24,9 @@ default: &default
 development:
   primary:
     adapter: postgresql
-    database: MovieMakers_development
-  users:
-    adapter: postgresql
     database: DataLionNav_development
-    migrations_paths: db/users_migrate
-  users_read:
-    adapter: postgresql
-    database: DataLionNav_development
-    replica: true
 
 production:
   primary:
     adapter: postgresql
     url: <%= ENV['DATABASE_URL'] %>
-  users:
-    adapter: postgresql
-    url: <%= ENV['USER_DB_URL'] %>
-    migrations_paths: db/users_migrate

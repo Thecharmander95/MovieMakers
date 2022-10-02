@@ -15,7 +15,7 @@
   %p Video types we accpet are Mp4, Mov, and Webm.
   %span.picture
     (Picture or video)
-    = f.file_field :picture, accept: 'image/jpeg,image/gif,image/png,video/mp4,video/mov,video/webm', direct_upload: true
+    = f.file_field :picture, accept: 'image/jpeg,image/gif,image/png,video/mp4,video/mov,video/webm'
   %br/
   .actions
     = f.submit "Add Picture/video", class: 'button'

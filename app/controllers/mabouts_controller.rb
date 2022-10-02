@@ -1,15 +1,15 @@
-class AboutsController < ApplicationController
+class MaboutsController < ApplicationController
   before_action :set_about, only: [:edit, :update, :destroy]
-  before_action :check_admin, only: [:new, :edit]
+
   def new
-    @about = About.new
+    @about = Mabout.new
   end
 
   def create
-    @about = About.new(about_params)
+    @about = Mabout.new(about_params)
     if @about.save
       flash[:notice] = "About page was successfully created"
-      redirect_to abouts_path
+      redirect_to mabouts_path
     else
       render 'new'
     end
@@ -21,7 +21,7 @@ class AboutsController < ApplicationController
   def update
     if @about.update(about_params)
      flash[:notice] = "About page was updated"
-     redirect_to article_path(@about)
+     redirect_to mabout_path(@about)
     else
      flash[:notice] = "About page was not updated"
      render 'edit'
@@ -29,22 +29,22 @@ class AboutsController < ApplicationController
   end
 
   def index
-    @abouts = About.all
+    @abouts = Mabout.all
   end
 
   def destroy
     @about.destroy
     flash[:notice] = "About page was deleted"
-    redirect_to abouts_path
+    redirect_to mabouts_path
   end
 
   private
 
     def set_about
-      @about = About.find(params[:id])
+      @about = Mabout.find(params[:id])
     end
 
     def about_params
-      params.require(:about).permit(:title, :toppara, :change, :list1, :list2, :list3, :buttum)
+      params.require(:mabout).permit(:title, :toppara, :change, :list1, :list2, :list3, :butto, :linkgithub, :githubtitlem)
     end
 end

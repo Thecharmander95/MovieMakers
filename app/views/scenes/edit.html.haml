@@ -26,4 +26,4 @@
 
         = link_to 'Back', movie_path(@movie), class: "button"
         \|
-        = link_to 'Remove Scene', [@movie, @scene], 'data-turbo-method': :delete, data: { confirm: 'Are you sure?' }, class: "button"
+        = link_to 'Remove Scene', [@movie, @scene], data: { "turbo-method": :delete, turbo_confirm: 'Are you sure?' }, class: "button"

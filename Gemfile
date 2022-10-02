@@ -31,6 +31,7 @@ gem 'autoprefixer-rails'
 
 gem 'devise'
 gem 'hirb'
+gem 'friendly_id', '~> 5.4.0'
 
 # Use ActiveStorage variant
 gem 'mini_magick', '~> 4.8'
