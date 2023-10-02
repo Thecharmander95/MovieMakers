@@ -12,8 +12,8 @@ gem 'rails', '~> 7.0'
 # Use postgresql as the database for Active Record
 gem 'pg'
 # Use Puma as the app server
-# gem 'puma', '~> 5'
-gem "passenger", ">= 5.3.2", require: "phusion_passenger/rack_handler"
+gem 'puma', '~> 5'
+# gem "passenger", ">= 5.3.2", require: "phusion_passenger/rack_handler"
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 2.10'
 gem 'jquery-rails'
