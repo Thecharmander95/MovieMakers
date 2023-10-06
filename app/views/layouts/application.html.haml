@@ -10,6 +10,9 @@
     = csrf_meta_tags
   %body
     = render 'layouts/topbar'
+    - if Announcement.first.text == ""
+    -else
+      = render "layouts/announcements"
     = render 'layouts/flashmessages'
     .grid-container
       = yield

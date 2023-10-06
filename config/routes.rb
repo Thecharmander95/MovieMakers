@@ -18,4 +18,8 @@ Rails.application.routes.draw do
 
   resources :mabouts
   resources :picturescenes, only: :destroy
+  resources :disables
+
+  get :lionnav , "disables/lionnav"
+  get :moviemaker, "disables/moviemaker"
 end

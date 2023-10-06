@@ -1,7 +1,12 @@
 class UsersController < ApplicationController
   before_action :authenticate_user!
+  before_action :check_user, only: [:edit]
+  before_action :sitedisable_check
+  before_action :lionsocialdisable_check
+  before_action :userdisable_check, only: [:edit, :update]
 
   def index
+    @page_title = "All users Lion social"
     @users = User.all
     @users = User.by_newest
   end
@@ -14,18 +19,18 @@ class UsersController < ApplicationController
 
   def show
     @user = User.friendly.find(params[:id])
-  end
+      end
 
   def edit
     @user = User.friendly.find(params[:id])
-  end
+      end
 
   def update
     @user = User.friendly.find(params[:id])
     @user.avatar.attach(user_params[:avatar]) if user_params[:avatar].present?
     respond_to do |format|
       if @user.update(user_params)
-        UserMailer.change(@user).deliver_now
+        AllMailer.change(@user).deliver_now
         format.html { redirect_to root_path, notice: 'User was successfully updated.' }
         format.json { render :index, status: :ok, location: @user }
       else
@@ -35,6 +40,21 @@ class UsersController < ApplicationController
     end
   end
 
+  def following
+    @title = "Following"
+    @user = User.friendly.find(params[:id])
+    @users = @user.following
+    render 'show_follow'
+  end
+
+  def followers
+    @title = "Followers"
+    @user = User.friendly.find(params[:id])
+    @users = @user.followers
+    render 'show_follow'
+  end
+
+
   private
 
     def set_user
@@ -42,6 +62,6 @@ class UsersController < ApplicationController
     end
 
     def user_params
-      params.require(:user).permit(:username, :phone, :body, :avatar)
+      params.require(:user).permit(:username, :body, :avatar, :role)
     end
  end

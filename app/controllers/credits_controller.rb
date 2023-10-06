@@ -1,6 +1,9 @@
 class CreditsController < ApplicationController
   before_action :set_movie
   before_action :set_credit, only: [:edit, :update, :destroy]
+  before_action :sitedisable_check
+  before_action :moviemaker_check
+  before_action :credit_check
 
   def new
     @credit = @movie.credits.new

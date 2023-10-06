@@ -1,6 +1,9 @@
 class MoviesController < ApplicationController
   before_action :authenticate_user!
   before_action :set_movie, only: [:show, :edit, :update, :destroy]
+  before_action :sitedisable_check
+  before_action :moviemaker_check
+  before_action :movie_check
 
   # GET /movies
   # GET /movies.json

@@ -1,6 +1,9 @@
 class ScenesController < ApplicationController
   before_action :set_movie
   before_action :set_scene, only: [:edit, :update, :destroy]
+  before_action :sitedisable_check
+  before_action :moviemaker_check
+  before_action :scene_check
 
   # GET /scenes
   # GET /scenes.json
