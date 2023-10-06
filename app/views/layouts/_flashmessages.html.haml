@@ -1,9 +1,4 @@
-.grid-x
-  .small-12.columns
-    - if flash[:notice]
-      .primary.callout
-        = flash[:notice]
-
-    - if flash[:alert]
-      .alert.callout
-        = flash[:alert]
+- flash.each do |name, msg|
+  .callout
+    %ul
+      %li= msg
