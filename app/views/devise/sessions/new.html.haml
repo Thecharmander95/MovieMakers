@@ -5,15 +5,12 @@
         %br/
       .medium-6.cell.space
         .callout.round
-          .center
-            %h2 Log in
+          %h2 Log in
           .field
             = f.label :Email
-            %br/
             = f.email_field :email, autofocus: true, autocomplete: "email"
           .field
             = f.label :Password
-            %br/
             = f.password_field :password, autocomplete: "current-password"
           - if devise_mapping.rememberable?
             .field
