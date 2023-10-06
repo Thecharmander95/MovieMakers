@@ -1,4 +1,4 @@
 class ApplicationMailer < ActionMailer::Base
-  default from: 'moviemakers@no.reply'
+  default from: 'lionnav@no.reply'
   layout 'mailer'
 end
