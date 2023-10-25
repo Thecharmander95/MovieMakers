@@ -40,6 +40,9 @@ gem "aws-sdk-s3", require: false
 gem "ffmpeg"
 gem 'fastimage'
 
+gem 'jsbundling-rails'
+gem 'cssbundling-rails'
+
 # Haml
 gem 'haml-rails'
 gem 'html2haml'

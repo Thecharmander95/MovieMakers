@@ -2,11 +2,13 @@
 import jquery from "jquery"
 window.jQuery = jquery
 window.$ = jquery
+
 import "@hotwired/turbo-rails"
 
-import foundation from "foundation-sites"
+import Foundation from 'foundation-sites'
 
-document.addEventListener("turbo:load", () => {
+$(document).on('turbo:load', function () {
   $(document).foundation();
 });
+
 import "./controllers"

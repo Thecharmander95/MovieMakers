@@ -1,2 +1,4 @@
-.callout
-  %p= Announcement.first.text
+- Announcement.all.each do |announce|
+  - if announce.site == "moviemakers"
+    .callout
+      %p= announce.text

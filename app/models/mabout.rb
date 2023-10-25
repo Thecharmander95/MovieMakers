@@ -1,2 +1,0 @@
-class Mabout < ApplicationRecord
-end
