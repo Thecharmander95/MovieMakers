@@ -1,10 +1,10 @@
 class AllMailer < ApplicationMailer
-
-  # Subject can be set in your I18n file at config/locales/en.yml
-  # with the following lookup:
-  #
-  #   en.user_mailer.welcome.subject
-  #
+  
+  def error_email
+    @url = errors_url
+    mail(to: User.all.find_by_role('admin').email, subject: 'A new error was found by a user.')
+  end
+  
   def welcome(resource)
     @resource = resource
     @user = @resource.username

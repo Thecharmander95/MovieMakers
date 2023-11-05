@@ -18,6 +18,7 @@ Rails.application.routes.draw do
 
   resources :disables
   resources :abouts
+  resources :errors
 
   get :lionnav , "disables/lionnav"
   get :moviemaker, "disables/moviemaker"

@@ -3,8 +3,8 @@ class ErrorsController < ApplicationController
   before_action :check_admin, only: [:index, :destroy]
   before_action :authenticate_user!
   before_action :sitedisable_check
-  before_action :lionsocialdisable_check
   before_action :errordisable_check
+  before_action :moviemaker_check
 
   def new
     @error = Error.new
@@ -12,17 +12,13 @@ class ErrorsController < ApplicationController
 
   def create
     @error = Error.new(error_params)
-    if @error.save
-      flash[:notice] = "Error was successfully reported. We will review it and fix this error #{current_user.username}."
-      redirect_to root_path
-      AllMailer.error_email.deliver_now
-    else
-      render 'new'
-    end
+    flash[:notice] = "Error was successfully reported. We will review it and fix this error #{current_user.username}."
+    AllMailer.error_email.deliver_now
+    redirect_to root_path
   end
 
  def index
-   @page_title = "Errors Lion social"
+   @page_title = "Errors Movie Makers"
    @errors = Error.all
    @errors = Error.by_newest
  end

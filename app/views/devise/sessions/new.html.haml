@@ -1,9 +1,9 @@
-.sign-in
-  = form_for(resource, as: resource_name, url: session_path(resource_name), html: { data: { turbo: false} } ) do |f|
-    .grid-x
-      .medium-3.cell
-        %br/
-      .medium-6.cell.space
+= form_for(resource, as: resource_name, url: session_path(resource_name), html: { data: { turbo: false} } ) do |f|
+  .grid-x
+    .medium-3.cell
+      %br/
+    .medium-6.cell.space
+      .onlyshown
         .callout.round
           %h2 Log in
           .field

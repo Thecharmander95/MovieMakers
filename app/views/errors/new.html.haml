@@ -1,0 +1,13 @@
+.grid-x
+  .medium-3.cell 
+  .medium-6.cell
+    .onlyshown
+      .callout.round
+        %h1 Report a Error
+        = form_for @error do |f|  
+          = f.label :Where_is_the_error?
+          = f.text_field :error
+          = f.label :Give_A_Description_Of_The_Error
+          = f.text_area :description
+          = f.submit class: "button"
+        = link_to 'Back', root_path, class: "button"
