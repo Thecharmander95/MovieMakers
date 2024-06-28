@@ -29,4 +29,8 @@ development:
 production:
   primary:
     adapter: postgresql
-    url: <%= ENV['DATABASE_URL'] %>
+    encoding: utf8
+    database: <%= Rails.application.credentials.dig(:database, :dbname) %>
+    username: <%= Rails.application.credentials.dig(:database, :username) %>
+    password: <%= Rails.application.credentials.dig(:database, :password) %>
+    port: <%= Rails.application.credentials.dig(:database, :port) %>
